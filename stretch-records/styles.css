@@ -84,6 +84,13 @@ footer {
   border-bottom: 2px solid #b3b1b0;
 }
 
+/* The loading and error line above the cards. Empty until code writes to it. */
+.status {
+  min-height: 1.4em;
+  margin: 0 0 12px;
+  color: #605d5d;
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;

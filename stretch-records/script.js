@@ -84,12 +84,15 @@ shuffleButton.addEventListener('click', () => {
 // string is falsy.
 const form = document.querySelector('.signup');
 const nameInput = document.querySelector('#artist-name');
+const genreInput = document.querySelector('#artist-genre');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   const name = nameInput.value;
   if (name) {
-    renderCards([{ name: name, genre: 'Unsigned', total: '0:00' }]);
+    const genre = genreInput.value || 'Unsigned';
+    renderCards([{ name: name, genre: genre, total: '0:00' }]);
     nameInput.value = '';
+    genreInput.value = '';
   }
 });
