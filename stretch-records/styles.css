@@ -102,6 +102,14 @@ footer {
   border-color: #ec3013;
 }
 
+.cards img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
 .cards h3 {
   font-size: 19px;
   font-weight: 800;

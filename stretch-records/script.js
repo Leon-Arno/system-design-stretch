@@ -4,11 +4,11 @@
 // of artist objects at the top of the file, and one repeatable rule that
 // renders it. In this course the data moves out of this file, step by step.
 const artists = [
-  { name: "Pinkfong", genre: "Children's music", total: "11:31" },
-  { name: "Adriano Celentano", genre: "Italian pop", total: "20:52" },
-  { name: "Asake", genre: "Afrobeats", total: "14:08" },
-  { name: "Miyagi and Andy Panda", genre: "Hip-hop", total: "16:21" },
-  { name: "Johnny Cash", genre: "Country", total: "15:40" },
+  { name: "Pinkfong", genre: "Children's music", total: "11:31", photo: "images/pinkfong.jpeg" },
+  { name: "Adriano Celentano", genre: "Italian pop", total: "20:52", photo: "images/adriano-celentano.jpg" },
+  { name: "Asake", genre: "Afrobeats", total: "14:08", photo: "images/asake.jpg" },
+  { name: "Miyagi and Andy Panda", genre: "Hip-hop", total: "16:21", photo: "images/miyagi-and-andy-panda.jpg" },
+  { name: "Johnny Cash", genre: "Country", total: "15:40", photo: "images/johnny-cash.jpg" },
 ];
 
 const cardArea = document.querySelector(".cards");
@@ -17,6 +17,12 @@ const cardArea = document.querySelector(".cards");
 // and by the form below.
 function buildCard(artist) {
   const card = document.createElement("article");
+  if (artist.photo) {
+    const photo = document.createElement("img");
+    photo.src = artist.photo;
+    photo.alt = `${artist.name}, artist photo`;
+    card.append(photo);
+  }
   const title = document.createElement("h3");
   title.textContent = artist.name;
   const line = document.createElement("p");
